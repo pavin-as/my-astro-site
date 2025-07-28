@@ -1,0 +1,14 @@
+To replace the existing sampadavr.com site:
+
+1. Update CNAME file:
+   sampadavr.com
+
+2. Update astro.config.mjs:
+   site: 'https://sampadavr.com'
+
+3. DNS Configuration:
+   - Remove existing A records for sampadavr.com
+   - Add GitHub Pages A records (see above)
+   - Wait 24-48 hours for DNS propagation
+
+4. Enable custom domain in GitHub repository settings 

@@ -3,7 +3,7 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://web.sampadavr.com',
+  site: 'https://sampadavr.com',
   build: {
     assets: 'assets'
   }

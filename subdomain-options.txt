@@ -1,0 +1,15 @@
+Alternative subdomain options for sampadavr.com:
+
+1. new.sampadavr.com
+2. astro.sampadavr.com
+3. site.sampadavr.com
+4. app.sampadavr.com
+5. www.sampadavr.com (if not already in use)
+6. dev.sampadavr.com
+7. platform.sampadavr.com
+
+To use any of these:
+1. Update the CNAME file with your chosen subdomain
+2. Update astro.config.mjs with the same subdomain
+3. Add DNS CNAME record pointing to pavin-as.github.io
+4. Commit and push changes 
