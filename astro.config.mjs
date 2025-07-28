@@ -3,8 +3,7 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://pavin-as.github.io', // Replace with your GitHub username
-  base: '/my-astro-site', // Replace with your repository name
+  site: 'https://sampadavr.com', // Your custom domain
   build: {
     assets: 'assets'
   }
