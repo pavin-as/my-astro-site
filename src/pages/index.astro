@@ -1,7 +1,60 @@
 ---
 // Frontmatter - runs at build time
-const title = "My Website";
-const description = "Welcome to my personal website";
+const title = "Organicism Platform";
+const description = "Welcome to Organicism Platform - Your trusted partner for modern web solutions";
+
+// Sample blog posts (replace with your actual WordPress content)
+const recentPosts = [
+  {
+    title: "Getting Started with Modern Web Development",
+    excerpt: "Learn the fundamentals of building fast, secure, and scalable websites using modern technologies.",
+    date: "2024-12-15",
+    category: "Web Development",
+    image: "/images/blog-1.jpg"
+  },
+  {
+    title: "Why Choose Static Sites for Your Business",
+    excerpt: "Discover the benefits of static websites for security, performance, and cost-effectiveness.",
+    date: "2024-12-10",
+    category: "Business",
+    image: "/images/blog-2.jpg"
+  },
+  {
+    title: "SEO Best Practices for 2024",
+    excerpt: "Stay ahead of the competition with these essential SEO strategies for the new year.",
+    date: "2024-12-05",
+    category: "SEO",
+    image: "/images/blog-3.jpg"
+  }
+];
+
+// Sample services (replace with your actual services)
+const services = [
+  {
+    title: "Web Development",
+    description: "Custom websites built with modern technologies for optimal performance and user experience.",
+    icon: "💻",
+    features: ["Responsive Design", "SEO Optimized", "Fast Loading", "Secure"]
+  },
+  {
+    title: "E-commerce Solutions",
+    description: "Complete online store solutions to help you sell products and grow your business.",
+    icon: "🛒",
+    features: ["Payment Integration", "Inventory Management", "Order Processing", "Analytics"]
+  },
+  {
+    title: "Digital Marketing",
+    description: "Comprehensive digital marketing strategies to increase your online presence and reach.",
+    icon: "📈",
+    features: ["SEO", "Social Media", "Content Marketing", "PPC Campaigns"]
+  },
+  {
+    title: "Website Maintenance",
+    description: "Ongoing support and maintenance to keep your website running smoothly and securely.",
+    icon: "🔧",
+    features: ["Security Updates", "Performance Monitoring", "Backup Management", "Technical Support"]
+  }
+];
 ---
 
 <html lang="en">
@@ -11,57 +64,113 @@ const description = "Welcome to my personal website";
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://pavin-as.github.io/my-astro-site/" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
   </head>
   <body>
     <header>
       <nav>
         <a href="/">Home</a>
         <a href="/about">About</a>
+        <a href="/services">Services</a>
+        <a href="/blog">Blog</a>
+        <a href="/portfolio">Portfolio</a>
         <a href="/contact">Contact</a>
       </nav>
     </header>
     
     <main>
       <section class="hero">
-        <h1>Welcome to My Website</h1>
-        <p class="hero-subtitle">This is a modern, fast, and secure static website built with Astro.</p>
+        <h1>Welcome to Organicism Platform</h1>
+        <p class="hero-subtitle">Your trusted partner for modern, secure, and high-performance web solutions. We transform ideas into digital reality.</p>
         <div class="cta-buttons">
-          <a href="/about" class="btn btn-primary">Learn More</a>
-          <a href="/contact" class="btn btn-secondary">Get In Touch</a>
+          <a href="/services" class="btn btn-primary">Our Services</a>
+          <a href="/portfolio" class="btn btn-secondary">View Portfolio</a>
         </div>
       </section>
       
-      <section class="features">
-        <h2>Why Choose Our Platform?</h2>
-        <div class="features-grid">
-          <div class="feature-card">
-            <div class="feature-icon">⚡</div>
-            <h3>Lightning Fast</h3>
-            <p>Built with modern web technologies for optimal performance and speed.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">🔒</div>
-            <h3>Secure</h3>
-            <p>Static sites are inherently more secure with no server-side vulnerabilities.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">📱</div>
-            <h3>Mobile Responsive</h3>
-            <p>Perfect experience across all devices and screen sizes.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">🎨</div>
-            <h3>Modern Design</h3>
-            <p>Clean, professional design that looks great and works perfectly.</p>
-          </div>
+      <section class="services-preview">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+          {services.map(service => (
+            <div class="service-card">
+              <div class="service-icon">{service.icon}</div>
+              <h3>{service.title}</h3>
+              <p>{service.description}</p>
+              <ul class="service-features">
+                {service.features.map(feature => (
+                  <li>✓ {feature}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+        <div class="services-cta">
+          <a href="/services" class="btn btn-outline">View All Services</a>
         </div>
       </section>
 
       <section class="about-preview">
         <div class="about-content">
-          <h2>About Our Mission</h2>
-          <p>We believe in creating websites that are not just beautiful, but also fast, secure, and accessible. Our static site approach ensures your content loads quickly and stays secure.</p>
-          <a href="/about" class="btn btn-outline">Read More About Us</a>
+          <h2>About Organicism Platform</h2>
+          <p>We are a team of passionate developers and designers dedicated to creating exceptional digital experiences. With years of experience in web development, we understand what it takes to build websites that not only look great but also perform exceptionally well.</p>
+          <p>Our mission is to help businesses establish a strong online presence through modern, secure, and scalable web solutions that drive results.</p>
+          <a href="/about" class="btn btn-outline">Learn More About Us</a>
+        </div>
+      </section>
+
+      <section class="blog-preview">
+        <h2>Latest from Our Blog</h2>
+        <div class="blog-grid">
+          {recentPosts.map(post => (
+            <article class="blog-card">
+              <div class="blog-image">
+                <img src={post.image} alt={post.title} />
+              </div>
+              <div class="blog-content">
+                <div class="blog-meta">
+                  <span class="blog-category">{post.category}</span>
+                  <span class="blog-date">{new Date(post.date).toLocaleDateString()}</span>
+                </div>
+                <h3>{post.title}</h3>
+                <p>{post.excerpt}</p>
+                <a href="/blog" class="read-more">Read More →</a>
+              </div>
+            </article>
+          ))}
+        </div>
+        <div class="blog-cta">
+          <a href="/blog" class="btn btn-outline">View All Posts</a>
+        </div>
+      </section>
+
+      <section class="stats-section">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-number">50+</div>
+            <div class="stat-label">Projects Completed</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Client Satisfaction</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">5+</div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">Support Available</div>
+          </div>
         </div>
       </section>
     </main>
@@ -69,25 +178,38 @@ const description = "Welcome to my personal website";
     <footer>
       <div class="footer-content">
         <div class="footer-section">
-          <h3>My Website</h3>
-          <p>Building the future of web development with modern, secure, and fast websites.</p>
+          <h3>Organicism Platform</h3>
+          <p>Building the future of web development with modern, secure, and fast websites that drive business growth.</p>
         </div>
         <div class="footer-section">
           <h4>Quick Links</h4>
           <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/about">About</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/portfolio">Portfolio</a></li>
             <li><a href="/contact">Contact</a></li>
           </ul>
         </div>
         <div class="footer-section">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="/services#web-development">Web Development</a></li>
+            <li><a href="/services#ecommerce">E-commerce</a></li>
+            <li><a href="/services#marketing">Digital Marketing</a></li>
+            <li><a href="/services#maintenance">Website Maintenance</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
           <h4>Contact Info</h4>
-          <p>📧 contact@example.com</p>
+          <p>📧 contact@organicismplatform.com</p>
           <p>📱 +1 (555) 123-4567</p>
+          <p>📍 New York, NY</p>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2024 My Website. Built with Astro.</p>
+        <p>&copy; 2024 Organicism Platform. Built with Astro.</p>
       </div>
     </footer>
   </body>
@@ -125,6 +247,7 @@ const description = "Welcome to my personal website";
     display: flex;
     justify-content: center;
     gap: 2rem;
+    flex-wrap: wrap;
   }
   
   nav a {
@@ -169,7 +292,7 @@ const description = "Welcome to my personal website";
     font-size: 1.3rem;
     margin-bottom: 2rem;
     color: #5a6c7d;
-    max-width: 600px;
+    max-width: 800px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -225,25 +348,26 @@ const description = "Welcome to my personal website";
     color: white;
   }
   
-  /* Features Section */
-  .features {
+  /* Services Section */
+  .services-preview {
     padding: 4rem 0;
   }
   
-  .features h2 {
+  .services-preview h2 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
     color: #2c3e50;
   }
   
-  .features-grid {
+  .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
+    margin-bottom: 3rem;
   }
   
-  .feature-card {
+  .service-card {
     background: white;
     padding: 2rem;
     border-radius: 15px;
@@ -252,23 +376,38 @@ const description = "Welcome to my personal website";
     transition: transform 0.3s ease;
   }
   
-  .feature-card:hover {
+  .service-card:hover {
     transform: translateY(-5px);
   }
   
-  .feature-icon {
+  .service-icon {
     font-size: 3rem;
     margin-bottom: 1rem;
   }
   
-  .feature-card h3 {
+  .service-card h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     color: #2c3e50;
   }
   
-  .feature-card p {
+  .service-card p {
     color: #5a6c7d;
+    margin-bottom: 1.5rem;
+  }
+  
+  .service-features {
+    list-style: none;
+    text-align: left;
+  }
+  
+  .service-features li {
+    padding: 0.25rem 0;
+    color: #5a6c7d;
+  }
+  
+  .services-cta {
+    text-align: center;
   }
   
   /* About Preview Section */
@@ -293,8 +432,126 @@ const description = "Welcome to my personal website";
   
   .about-content p {
     font-size: 1.2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     color: #5a6c7d;
+  }
+  
+  /* Blog Section */
+  .blog-preview {
+    padding: 4rem 0;
+  }
+  
+  .blog-preview h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #2c3e50;
+  }
+  
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  
+  .blog-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .blog-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .blog-image {
+    height: 200px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 3rem;
+  }
+  
+  .blog-content {
+    padding: 1.5rem;
+  }
+  
+  .blog-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .blog-category {
+    background: #667eea;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+  }
+  
+  .blog-date {
+    color: #5a6c7d;
+  }
+  
+  .blog-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+  }
+  
+  .blog-card p {
+    color: #5a6c7d;
+    margin-bottom: 1rem;
+  }
+  
+  .read-more {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  .read-more:hover {
+    text-decoration: underline;
+  }
+  
+  .blog-cta {
+    text-align: center;
+  }
+  
+  /* Stats Section */
+  .stats-section {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    margin: 2rem 0;
+    border-radius: 20px;
+  }
+  
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+  }
+  
+  .stat-item {
+    text-align: center;
+    color: white;
+  }
+  
+  .stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  
+  .stat-label {
+    font-size: 1.1rem;
+    opacity: 0.9;
   }
   
   /* Footer */
@@ -359,8 +616,13 @@ const description = "Welcome to my personal website";
       align-items: center;
     }
     
-    .features-grid {
+    .services-grid,
+    .blog-grid {
       grid-template-columns: 1fr;
+    }
+    
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
     }
     
     nav {
