@@ -5,7 +5,7 @@ export interface Props {
   image?: string;
 }
 
-const { title, description = "Sampada VR Specialty Eye Care - Exceptional Healthcare Services", image = "/wp-content/uploads/2021/12/logo-new-sampadavr.png" } = Astro.props;
+const { title, description = "Sampada VR Specialty Eye Care - Exceptional Healthcare Services", image = "/favicon.svg" } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -14,7 +14,7 @@ const { title, description = "Sampada VR Specialty Eye Care - Exceptional Health
     <meta charset="UTF-8">
     <meta name="description" content={description}>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <link rel="icon" type="image/svg+xml" href="/wp-content/uploads/2021/12/cropped-sampadaLogo-32x32.webp" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
 
