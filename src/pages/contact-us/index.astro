@@ -1,0 +1,371 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout title="Contact Us - Sampada VR Specialty Eye Care">
+  <Header />
+
+  <!-- Hero Section -->
+  <section class="hero-section bg-gradient-to-r from-primary-600 to-primary-800 text-white py-20">
+    <div class="container">
+      <div class="text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">Contact Us</h1>
+        <p class="text-xl md:text-2xl max-w-3xl mx-auto">
+          Get in touch with us for appointments, consultations, or any questions about our services
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Information -->
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <!-- Contact Form -->
+        <div class="space-y-6">
+          <h2 class="text-3xl font-bold text-gray-900">Send us a Message</h2>
+          <form class="space-y-6" id="contact-form">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label for="first-name" class="block text-sm font-medium text-gray-700 mb-2">
+                  First Name *
+                </label>
+                <input 
+                  type="text" 
+                  id="first-name" 
+                  name="first-name" 
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                >
+              </div>
+              <div>
+                <label for="last-name" class="block text-sm font-medium text-gray-700 mb-2">
+                  Last Name *
+                </label>
+                <input 
+                  type="text" 
+                  id="last-name" 
+                  name="last-name" 
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                >
+              </div>
+            </div>
+            
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+                Email Address *
+              </label>
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                required
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+              >
+            </div>
+            
+            <div>
+              <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">
+                Phone Number *
+              </label>
+              <input 
+                type="tel" 
+                id="phone" 
+                name="phone" 
+                required
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+              >
+            </div>
+            
+            <div>
+              <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">
+                Subject *
+              </label>
+              <select 
+                id="subject" 
+                name="subject" 
+                required
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+              >
+                <option value="">Select a subject</option>
+                <option value="appointment">Book Appointment</option>
+                <option value="consultation">General Consultation</option>
+                <option value="emergency">Emergency Care</option>
+                <option value="information">General Information</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-700 mb-2">
+                Message *
+              </label>
+              <textarea 
+                id="message" 
+                name="message" 
+                rows="5" 
+                required
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                placeholder="Please describe your concern or reason for contacting us..."
+              ></textarea>
+            </div>
+            
+            <button 
+              type="submit" 
+              class="btn btn-primary w-full py-4 text-lg"
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="space-y-8">
+          <div>
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">Get in Touch</h2>
+            <p class="text-gray-600 mb-8">
+              We're here to help and answer any questions you might have. We look forward to hearing from you.
+            </p>
+          </div>
+
+          <div class="space-y-6">
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0">
+                <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center">
+                  <i class="fas fa-map-marker-alt text-primary-600 text-xl"></i>
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Address</h3>
+                <p class="text-gray-600">
+                  SampadaVR Speciality Eye Care LLP<br>
+                  Railway Station Bypass Rd, Thazhepalam,<br>
+                  Tirur, Kerala 676 101
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0">
+                <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center">
+                  <i class="fas fa-phone text-primary-600 text-xl"></i>
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Phone</h3>
+                <div class="space-y-1">
+                  <a href="tel:+919188572412" class="text-gray-600 hover:text-primary-600 transition-colors block">
+                    +91 918 85 724 12
+                  </a>
+                  <a href="tel:+916238085482" class="text-gray-600 hover:text-primary-600 transition-colors block">
+                    +91 623 80 854 82
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0">
+                <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center">
+                  <i class="fas fa-envelope text-primary-600 text-xl"></i>
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Email</h3>
+                <a href="mailto:Info@sampada.local" class="text-gray-600 hover:text-primary-600 transition-colors">
+                  Info@sampada.local
+                </a>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0">
+                <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center">
+                  <i class="fas fa-clock text-primary-600 text-xl"></i>
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Opening Hours</h3>
+                <div class="space-y-1 text-gray-600">
+                  <p>Monday: 9 AM to 5 PM</p>
+                  <p>Tuesday: 3 PM to 5 PM</p>
+                  <p>WED - SAT: 9AM to 5PM</p>
+                  <p class="text-sm text-gray-500 mt-2">Closed on Sundays</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Emergency Contact -->
+          <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0">
+                <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
+                  <i class="fas fa-exclamation-triangle text-red-600 text-xl"></i>
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-red-900 mb-2">Emergency Care</h3>
+                <p class="text-red-700 mb-3">
+                  For emergency eye care, please call us immediately or visit the nearest emergency room.
+                </p>
+                <a href="tel:+919188572412" class="text-red-600 hover:text-red-800 font-medium">
+                  Emergency: +91 918 85 724 12
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map Section -->
+  <section class="section bg-gray-50">
+    <div class="container">
+      <div class="text-center mb-8">
+        <h2 class="text-3xl font-bold text-gray-900">Find Us</h2>
+        <p class="text-gray-600">Visit our clinic for in-person consultations</p>
+      </div>
+      
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <div class="aspect-w-16 aspect-h-9">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.1234567890123!2d75.12345678901234!3d10.12345678901234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDA3JzM0LjQiTiA3NcKwMDcnMzQuNCJF!5e0!3m2!1sen!2sin!4v1234567890123"
+            width="100%" 
+            height="400" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Sampada VR Location"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center mb-12">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Quick answers to common questions</p>
+      </div>
+      
+      <div class="max-w-3xl mx-auto">
+        <div class="space-y-4">
+          {[
+            {
+              question: "How do I book an appointment?",
+              answer: "You can book an appointment by calling us, filling out the contact form above, or visiting our clinic in person. We recommend calling for urgent cases."
+            },
+            {
+              question: "What should I bring to my first appointment?",
+              answer: "Please bring any previous medical records related to your eye health, a list of current medications, and arrive 15 minutes early to complete paperwork."
+            },
+            {
+              question: "Do you offer emergency services?",
+              answer: "Yes, we provide emergency eye care services. For urgent cases, please call us immediately or visit the nearest emergency room."
+            },
+            {
+              question: "What insurance do you accept?",
+              answer: "We accept most major insurance providers. Please contact us to verify your specific insurance coverage before your appointment."
+            }
+          ].map((faq) => (
+            <div class="faq-item border border-gray-200 rounded-lg">
+              <button class="faq-question w-full p-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors">
+                <span class="font-medium text-gray-900">{faq.question}</span>
+                <i class="fas fa-chevron-down text-gray-500 transition-transform"></i>
+              </button>
+              <div class="faq-answer hidden p-4 border-t border-gray-200">
+                <p class="text-gray-600">{faq.answer}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  .hero-section {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #0284c7 100%);
+  }
+
+  .aspect-w-16 {
+    position: relative;
+    padding-bottom: 56.25%;
+  }
+
+  .aspect-w-16 iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+</style>
+
+<script>
+  // Contact form handling
+  document.addEventListener('DOMContentLoaded', () => {
+    const contactForm = document.getElementById('contact-form');
+    
+    contactForm?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      // Get form data
+      const formData = new FormData(contactForm as HTMLFormElement);
+      const data = Object.fromEntries(formData);
+      
+      // Here you would typically send the data to your backend
+      console.log('Form submitted:', data);
+      
+      // Show success message
+      alert('Thank you for your message! We will get back to you soon.');
+      
+      // Reset form
+      (contactForm as HTMLFormElement).reset();
+    });
+  });
+
+  // FAQ functionality
+  document.addEventListener('DOMContentLoaded', () => {
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+      const question = item.querySelector('.faq-question');
+      const answer = item.querySelector('.faq-answer');
+      const icon = question?.querySelector('i');
+
+      question?.addEventListener('click', () => {
+        const isActive = question.classList.contains('active');
+
+        // Close all other FAQ items
+        faqItems.forEach(otherItem => {
+          const otherQuestion = otherItem.querySelector('.faq-question');
+          const otherAnswer = otherItem.querySelector('.faq-answer');
+          const otherIcon = otherQuestion?.querySelector('i');
+
+          if (otherQuestion) otherQuestion.classList.remove('active');
+          if (otherAnswer) otherAnswer.classList.remove('active');
+          if (otherIcon) otherIcon.style.transform = '';
+        });
+
+        // Toggle current item
+        if (!isActive) {
+          if (question) question.classList.add('active');
+          if (answer) answer.classList.add('active');
+          if (icon) icon.style.transform = 'rotate(180deg)';
+        }
+      });
+    });
+  });
+</script> 

@@ -1,0 +1,225 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout title="About - Sampada VR Specialty Eye Care">
+  <Header />
+
+  <!-- Hero Section -->
+  <section class="hero-section bg-gradient-to-r from-primary-600 to-primary-800 text-white py-20">
+    <div class="container">
+      <div class="text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">About Us</h1>
+        <p class="text-xl md:text-2xl max-w-3xl mx-auto">
+          Dedicated to providing exceptional eye care services with compassion and innovation
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Content -->
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6">
+          <h2 class="text-3xl font-bold text-gray-900">Our Story</h2>
+          <p class="text-gray-600 leading-relaxed">
+            Sampada VR Specialty Eye Care was founded with a vision to revolutionize retinal healthcare in India. 
+            Our journey began with a simple yet powerful mission: to provide world-class eye care services that 
+            combine cutting-edge technology with compassionate patient care.
+          </p>
+          <p class="text-gray-600 leading-relaxed">
+            We understand that every patient is unique, and we believe in providing personalized care that addresses 
+            individual needs. Our team of experienced ophthalmologists and medical professionals are committed to 
+            staying at the forefront of medical advancements to ensure the best possible outcomes for our patients.
+          </p>
+          <div class="grid grid-cols-2 gap-6">
+            <div class="text-center">
+              <div class="text-3xl font-bold text-primary-600 mb-2">500+</div>
+              <div class="text-gray-600">Happy Patients</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold text-primary-600 mb-2">10+</div>
+              <div class="text-gray-600">Years Experience</div>
+            </div>
+          </div>
+        </div>
+        <div class="fade-in">
+          <img 
+            src="/wp-content/uploads/2024/02/drsameera.webp" 
+            alt="Dr. Sameera V V" 
+            class="w-full h-auto rounded-lg shadow-lg"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values Section -->
+  <section class="section bg-gray-50">
+    <div class="container">
+      <div class="text-center mb-12">
+        <h2 class="section-title">Our Values</h2>
+        <p class="section-subtitle">The principles that guide everything we do</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {[
+          {
+            icon: "fas fa-heart",
+            title: "Compassion",
+            description: "We treat every patient with kindness, empathy, and respect, understanding that healthcare is deeply personal."
+          },
+          {
+            icon: "fas fa-lightbulb",
+            title: "Innovation",
+            description: "We embrace the latest medical technologies and techniques to provide the best possible care."
+          },
+          {
+            icon: "fas fa-award",
+            title: "Excellence",
+            description: "We maintain the highest standards of medical practice and patient care in everything we do."
+          }
+        ].map((value) => (
+          <div class="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
+            <div class="text-4xl text-primary-600 mb-4">
+              <i class={value.icon}></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4">{value.title}</h3>
+            <p class="text-gray-600">{value.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center mb-12">
+        <h2 class="section-title">Our Team</h2>
+        <p class="section-subtitle">Meet the dedicated professionals behind Sampada VR</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {[
+          {
+            name: "Dr. Sameera V V",
+            position: "Founder & Chief Ophthalmologist",
+            image: "/wp-content/uploads/2024/02/drsameera.webp",
+            description: "A renowned vitreoretinal specialist with over a decade of experience in treating complex retinal disorders."
+          },
+          {
+            name: "Dr. [Name]",
+            position: "Senior Ophthalmologist",
+            image: "/wp-content/uploads/2024/02/drsameera.webp",
+            description: "Specialized in diabetic retinopathy and macular degeneration treatments."
+          },
+          {
+            name: "Dr. [Name]",
+            position: "Pediatric Ophthalmologist",
+            image: "/wp-content/uploads/2024/02/drsameera.webp",
+            description: "Expert in treating eye conditions in children and premature infants."
+          }
+        ].map((member) => (
+          <div class="team-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+            <div class="relative">
+              <img 
+                src={member.image} 
+                alt={member.name}
+                class="w-full h-64 object-cover"
+              />
+              <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+                <div class="text-white text-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                  <p class="text-sm">{member.description}</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">{member.name}</h3>
+              <p class="text-primary-600 font-medium">{member.position}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Facilities Section -->
+  <section class="section bg-gray-50">
+    <div class="container">
+      <div class="text-center mb-12">
+        <h2 class="section-title">Our Facilities</h2>
+        <p class="section-subtitle">State-of-the-art equipment for the best care</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {[
+          {
+            icon: "fas fa-microscope",
+            title: "Advanced Diagnostics",
+            description: "Latest imaging and diagnostic equipment for accurate assessments."
+          },
+          {
+            icon: "fas fa-laser",
+            title: "Laser Treatment",
+            description: "Precision laser technology for various retinal conditions."
+          },
+          {
+            icon: "fas fa-hospital",
+            title: "Surgical Suite",
+            description: "Modern surgical facilities for complex procedures."
+          },
+          {
+            icon: "fas fa-user-md",
+            title: "Expert Care",
+            description: "Experienced medical professionals dedicated to your health."
+          }
+        ].map((facility) => (
+          <div class="bg-white p-6 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
+            <div class="text-3xl text-primary-600 mb-4">
+              <i class={facility.icon}></i>
+            </div>
+            <h3 class="text-lg font-bold mb-2">{facility.title}</h3>
+            <p class="text-gray-600 text-sm">{facility.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section bg-primary-600 text-white">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="text-3xl font-bold mb-4">Ready to Experience Better Eye Care?</h2>
+        <p class="text-xl mb-8 max-w-2xl mx-auto">
+          Schedule your consultation today and take the first step towards better vision and eye health.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/contact-us/" class="btn bg-white text-primary-600 hover:bg-gray-100">
+            Book Appointment
+          </a>
+          <a href="/treatments/" class="btn btn-secondary border-white text-white hover:bg-white hover:text-primary-600">
+            Learn More
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  .hero-section {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #0284c7 100%);
+  }
+
+  .team-card:hover img {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+  }
+</style> 

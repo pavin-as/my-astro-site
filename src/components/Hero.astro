@@ -1,0 +1,220 @@
+---
+const slides = [
+  {
+    image: "/wp-content/uploads/2024/02/3.png",
+    subtitle: "Welcome to",
+    title: "Exceptional Healthcare Services",
+    firstWord: "Exceptional"
+  },
+  {
+    image: "/wp-content/uploads/2024/02/2.png",
+    subtitle: "Experience",
+    title: "Excellence in Patient Care",
+    firstWord: "Excellence"
+  },
+  {
+    image: "/wp-content/uploads/2024/02/eyeee.webp",
+    subtitle: "Innovative",
+    title: "Medical Services for Your Wellness",
+    firstWord: "Medical"
+  },
+  {
+    image: "/wp-content/uploads/2024/02/6-3.webp",
+    subtitle: "Empowering",
+    title: "Communities through Quality Healthcare",
+    firstWord: "Communities"
+  },
+  {
+    image: "/wp-content/uploads/2024/02/eyeeeee.webp",
+    subtitle: "Discover",
+    title: "Compassionate Healing with Us",
+    firstWord: "Compassionate"
+  }
+];
+---
+
+<section class="hero relative h-screen overflow-hidden">
+  <!-- Slider -->
+  <div class="slider relative h-full">
+    {slides.map((slide, index) => (
+      <div 
+        class={`slide absolute inset-0 transition-opacity duration-1000 ${index === 0 ? 'opacity-100' : 'opacity-0'}`}
+        data-slide={index}
+      >
+        <!-- Background Image -->
+        <div 
+          class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={`background-image: url(${slide.image})`}
+        >
+          <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+        </div>
+        
+        <!-- Content -->
+        <div class="relative h-full flex items-center justify-center text-center text-white">
+          <div class="container">
+            <div class="max-w-4xl mx-auto space-y-6">
+              <div class="subtitle text-xl md:text-2xl font-light tracking-wider">
+                {slide.subtitle}
+              </div>
+              <h1 class="title text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
+                <span class="first-word text-primary-400">{slide.firstWord}</span>
+                <span class="ml-2">{slide.title.replace(slide.firstWord, '').trim()}</span>
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <!-- Navigation Arrows -->
+  <button 
+    id="prev-slide" 
+    class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-30 text-white p-3 rounded-full transition-all duration-300 z-10"
+    aria-label="Previous slide"
+  >
+    <i class="fas fa-chevron-left text-xl"></i>
+  </button>
+  <button 
+    id="next-slide" 
+    class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-30 text-white p-3 rounded-full transition-all duration-300 z-10"
+    aria-label="Next slide"
+  >
+    <i class="fas fa-chevron-right text-xl"></i>
+  </button>
+
+  <!-- Dots Navigation -->
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3 z-10">
+    {slides.map((_, index) => (
+      <button 
+        class={`dot w-3 h-3 rounded-full transition-all duration-300 ${index === 0 ? 'bg-white' : 'bg-white bg-opacity-50 hover:bg-opacity-75'}`}
+        data-slide={index}
+        aria-label={`Go to slide ${index + 1}`}
+      ></button>
+    ))}
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 animate-bounce">
+    <i class="fas fa-chevron-down text-white text-2xl"></i>
+  </div>
+</section>
+
+<style>
+  .hero {
+    min-height: 100vh;
+  }
+
+  .slide {
+    transition: opacity 1s ease-in-out;
+  }
+
+  .slide.active {
+    opacity: 1;
+  }
+
+  .slide:not(.active) {
+    opacity: 0;
+  }
+
+  .dot.active {
+    background-color: white;
+    transform: scale(1.2);
+  }
+
+  .dot:not(.active) {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .first-word {
+    color: #fbbf24;
+  }
+
+  @media (max-width: 768px) {
+    .title {
+      font-size: 2.5rem;
+    }
+    
+    .subtitle {
+      font-size: 1.125rem;
+    }
+  }
+</style>
+
+<script>
+  class HeroSlider {
+    private slides: HTMLElement[];
+    private dots: HTMLElement[];
+    private currentSlide: number = 0;
+    private interval: number | null = null;
+
+    constructor() {
+      this.slides = Array.from(document.querySelectorAll('.slide'));
+      this.dots = Array.from(document.querySelectorAll('.dot'));
+      this.init();
+    }
+
+    private init() {
+      this.setupEventListeners();
+      this.startAutoPlay();
+    }
+
+    private setupEventListeners() {
+      const prevBtn = document.getElementById('prev-slide');
+      const nextBtn = document.getElementById('next-slide');
+
+      prevBtn?.addEventListener('click', () => this.prevSlide());
+      nextBtn?.addEventListener('click', () => this.nextSlide());
+
+      this.dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => this.goToSlide(index));
+      });
+
+      // Pause autoplay on hover
+      const slider = document.querySelector('.slider');
+      slider?.addEventListener('mouseenter', () => this.stopAutoPlay());
+      slider?.addEventListener('mouseleave', () => this.startAutoPlay());
+    }
+
+    private goToSlide(index: number) {
+      // Remove active class from current slide and dot
+      this.slides[this.currentSlide].classList.remove('active');
+      this.dots[this.currentSlide].classList.remove('active');
+
+      // Update current slide
+      this.currentSlide = index;
+
+      // Add active class to new slide and dot
+      this.slides[this.currentSlide].classList.add('active');
+      this.dots[this.currentSlide].classList.add('active');
+    }
+
+    private nextSlide() {
+      const nextIndex = (this.currentSlide + 1) % this.slides.length;
+      this.goToSlide(nextIndex);
+    }
+
+    private prevSlide() {
+      const prevIndex = this.currentSlide === 0 ? this.slides.length - 1 : this.currentSlide - 1;
+      this.goToSlide(prevIndex);
+    }
+
+    private startAutoPlay() {
+      this.interval = window.setInterval(() => {
+        this.nextSlide();
+      }, 7000);
+    }
+
+    private stopAutoPlay() {
+      if (this.interval) {
+        clearInterval(this.interval);
+        this.interval = null;
+      }
+    }
+  }
+
+  // Initialize slider when DOM is loaded
+  document.addEventListener('DOMContentLoaded', () => {
+    new HeroSlider();
+  });
+</script> 

@@ -1,217 +1,128 @@
-# My Astro Website
+# Sampada VR Specialty Eye Care - Astro Website
 
-A modern, fast, and secure static website built with [Astro](https://astro.build). This project demonstrates how to create a professional website with excellent performance, security, and user experience.
+A modern, responsive website for Sampada VR Specialty Eye Care, built with Astro and Tailwind CSS.
 
-## 🚀 Features
+## 🏥 About
 
-- **⚡ Lightning Fast**: Built with Astro for optimal performance
-- **🔒 Secure**: Static site with no server-side vulnerabilities
-- **📱 Responsive**: Mobile-first design that works on all devices
-- **🎨 Modern Design**: Clean, professional UI with smooth animations
-- **🌐 SEO Optimized**: Built-in SEO features and meta tags
-- **🚀 Easy Deployment**: Automatic deployment to GitHub Pages
-
-## 🛠️ Tech Stack
-
-- **Framework**: [Astro](https://astro.build) - Static site generator
-- **Styling**: CSS with modern features (Grid, Flexbox, Custom Properties)
-- **Deployment**: GitHub Pages with GitHub Actions
-- **Performance**: Optimized for Core Web Vitals
-
-## 📁 Project Structure
-
-```
-my-astro-site/
-├── src/
-│   └── pages/
-│       ├── index.astro      # Homepage
-│       ├── about.astro      # About page
-│       └── contact.astro    # Contact page
-├── public/                  # Static assets
-├── .github/
-│   └── workflows/
-│       └── deploy.yml       # GitHub Actions workflow
-├── astro.config.mjs         # Astro configuration
-└── package.json
-```
+This website showcases the services and expertise of Sampada VR Specialty Eye Care, a specialized retinal care facility. The site features information about treatments, the medical team, and patient resources.
 
 ## 🚀 Quick Start
 
 ### Prerequisites
-
-- Node.js 18+ 
+- Node.js (v16 or higher)
 - npm or yarn
 
 ### Installation
+```bash
+# Install dependencies
+npm install
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/my-astro-site.git
-   cd my-astro-site
-   ```
+# Start development server
+npm run dev
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
+# Build for production
+npm run build
 
-3. **Start development server**
-   ```bash
-   npm run dev
-   ```
-
-4. **Open your browser**
-   Navigate to `http://localhost:4321`
-
-## 🏗️ Development
-
-### Available Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run astro ...` - Run Astro CLI commands
-
-### Project Configuration
-
-The project is configured for GitHub Pages deployment. Update the following in `astro.config.mjs`:
-
-```javascript
-export default defineConfig({
-  site: 'https://yourusername.github.io', // Your GitHub username
-  base: '/my-astro-site', // Your repository name
-  build: {
-    assets: 'assets'
-  }
-});
+# Preview production build
+npm run preview
 ```
 
-## 🌐 Deployment
+## 📁 Project Structure
 
-### GitHub Pages (Recommended)
+```
+src/
+├── components/          # Reusable UI components
+│   ├── Header.astro    # Navigation header
+│   ├── Footer.astro    # Site footer
+│   └── Hero.astro      # Hero section component
+├── layouts/            # Page layouts
+│   └── Layout.astro    # Main layout wrapper
+└── pages/              # Astro pages (routes)
+    ├── index.astro     # Homepage
+    ├── about/          # About us page
+    ├── about-dr-sameera-v-v/  # Doctor profile
+    ├── treatments/     # Services page
+    ├── contact-us/     # Contact page
+    ├── why-sampada-vr/ # Why choose us
+    └── blog/           # Blog page
 
-1. **Push to GitHub**
-   ```bash
-   git add .
-   git commit -m "Initial commit"
-   git push origin main
-   ```
+public/                 # Static assets
+├── favicon.svg         # Site icon
+└── wp-content/         # Images and media
 
-2. **Enable GitHub Pages**
-   - Go to your repository on GitHub
-   - Navigate to Settings → Pages
-   - Select "Deploy from a branch"
-   - Choose `gh-pages` branch and `/ (root)` folder
-   - Click Save
+dist/                   # Built site (production)
+```
 
-3. **Automatic Deployment**
-   - The GitHub Actions workflow will automatically build and deploy your site
-   - Your site will be available at: `https://yourusername.github.io/my-astro-site`
+## 🎨 Features
 
-### Manual Deployment
+- **Responsive Design**: Mobile-first approach with Tailwind CSS
+- **Fast Performance**: Static site generation for optimal speed
+- **SEO Optimized**: Proper meta tags and semantic HTML
+- **Accessible**: WCAG compliant design
+- **Modern UI**: Clean, professional interface
+- **Interactive Elements**: FAQ sections, contact forms, navigation
 
-1. **Build the project**
-   ```bash
-   npm run build
-   ```
+## 📋 Pages
 
-2. **Upload to your hosting provider**
-   - Upload the contents of the `dist` folder to your web server
-   - Configure your server to serve static files
+1. **Homepage** (`/`) - Main landing page with hero section and overview
+2. **About Us** (`/about/`) - Information about the clinic and team
+3. **About Dr. Sameera V V** (`/about-dr-sameera-v-v/`) - Doctor's profile and expertise
+4. **Treatments** (`/treatments/`) - Available services and procedures
+5. **Contact Us** (`/contact-us/`) - Contact information and appointment booking
+6. **Why Sampada VR** (`/why-sampada-vr/`) - Unique value proposition
+7. **Blog** (`/blog/`) - Educational content and updates
 
-## 🎨 Customization
+## 🛠️ Technology Stack
 
-### Styling
+- **Astro** - Static site generator
+- **Tailwind CSS** - Utility-first CSS framework
+- **TypeScript** - Type safety
+- **Font Awesome** - Icons
+- **Google Fonts** - Typography
 
-The project uses modern CSS with:
-- CSS Grid and Flexbox for layouts
-- CSS Custom Properties for theming
-- Smooth transitions and animations
-- Mobile-first responsive design
+## 🚀 Deployment
 
-### Content
+### Static Hosting
+Upload the contents of the `dist/` folder to any static hosting service:
+- Netlify
+- Vercel
+- GitHub Pages
+- AWS S3
+- Any web server
 
-Update the content in the `.astro` files:
-- `src/pages/index.astro` - Homepage content
-- `src/pages/about.astro` - About page content
-- `src/pages/contact.astro` - Contact page content
+### Full Project
+Upload the entire project and run build commands on the server.
 
-### Colors and Branding
+## 🔧 Customization
 
-Update the color scheme by modifying CSS custom properties in the style sections:
-
-```css
-:root {
-  --primary-color: #667eea;
-  --secondary-color: #764ba2;
-  --text-color: #2c3e50;
-  --light-text: #5a6c7d;
+### Colors
+Edit `tailwind.config.mjs` to modify the color scheme:
+```javascript
+colors: {
+  primary: {
+    50: '#f0f9ff',
+    100: '#e0f2fe',
+    500: '#0ea5e9',
+    600: '#0284c7',
+    700: '#0369a1',
+  }
 }
 ```
 
-## 📱 Pages Overview
+### Content
+- **Pages**: Edit files in `src/pages/`
+- **Components**: Edit files in `src/components/`
+- **Layout**: Edit `src/layouts/Layout.astro`
+- **Images**: Replace files in `public/`
 
-### Homepage (`/`)
-- Hero section with call-to-action buttons
-- Feature highlights with icons
-- About preview section
-- Modern, engaging design
+## 📞 Support
 
-### About Page (`/about`)
-- Company story and mission
-- Team member profiles
-- Company values
-- Call-to-action section
-
-### Contact Page (`/contact`)
-- Contact form with validation
-- Multiple contact methods
-- FAQ section
-- Social media links
-
-## 🔧 Configuration
-
-### SEO Settings
-
-Each page includes proper meta tags for SEO:
-- Title and description
-- Open Graph tags
-- Viewport settings
-- Favicon
-
-### Performance Optimization
-
-- Optimized images and assets
-- Minimal JavaScript (Astro's "zero JS by default" approach)
-- Efficient CSS with modern features
-- Fast loading times
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+For technical support or customization requests, please contact the development team.
 
 ## 📄 License
 
-This project is open source and available under the [MIT License](LICENSE).
-
-## 🆘 Support
-
-If you have any questions or need help:
-
-- 📧 Email: contact@example.com
-- 📱 Phone: +1 (555) 123-4567
-- 💬 Create an issue on GitHub
-
-## 🙏 Acknowledgments
-
-- Built with [Astro](https://astro.build)
-- Deployed on [GitHub Pages](https://pages.github.com/)
-- Icons from [Emoji](https://emojipedia.org/)
+This project is proprietary to Sampada VR Specialty Eye Care.
 
 ---
 
-**Built with ❤️ using Astro**
+**Built with ❤️ using Astro & Tailwind CSS**

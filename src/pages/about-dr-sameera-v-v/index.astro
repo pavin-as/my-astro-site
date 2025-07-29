@@ -1,0 +1,239 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout title="About Dr. Sameera V V - Sampada VR Specialty Eye Care">
+  <Header />
+
+  <!-- Hero Section -->
+  <section class="hero-section bg-gradient-to-r from-primary-600 to-primary-800 text-white py-20">
+    <div class="container">
+      <div class="text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">About Dr. Sameera V V</h1>
+        <p class="text-xl md:text-2xl max-w-3xl mx-auto">
+          Leading retinal specialist dedicated to compassionate eye care and innovative treatments
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Doctor Profile Section -->
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="fade-in">
+          <img 
+            src="/wp-content/uploads/2024/02/drsameera.webp" 
+            alt="Dr. Sameera V V" 
+            class="w-full h-auto rounded-lg shadow-lg"
+          />
+        </div>
+        <div class="space-y-6 slide-up">
+          <h2 class="text-3xl font-bold text-gray-900">Dr. Sameera V V</h2>
+          <h3 class="text-xl font-semibold text-primary-600">Retinal Specialist & Founder</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Dr. Sameera V V is a highly skilled and experienced retinal specialist with over a decade of expertise 
+            in diagnosing and treating complex retinal disorders. As the founder of Sampada VR Specialty Eye Care, 
+            she has dedicated her career to providing world-class eye care services with a focus on innovation, 
+            compassion, and patient-centered care.
+          </p>
+          <p class="text-gray-600 leading-relaxed">
+            Her commitment to excellence and continuous learning has made her a trusted name in retinal healthcare, 
+            serving patients with various conditions including diabetic retinopathy, macular degeneration, 
+            retinal detachment, and other complex retinal disorders.
+          </p>
+          <div class="grid grid-cols-2 gap-6">
+            <div class="text-center">
+              <div class="text-3xl font-bold text-primary-600 mb-2">10+</div>
+              <div class="text-gray-600">Years Experience</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold text-primary-600 mb-2">1000+</div>
+              <div class="text-gray-600">Successful Surgeries</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Qualifications Section -->
+  <section class="section bg-gray-50">
+    <div class="container">
+      <div class="text-center mb-12">
+        <h2 class="section-title">Qualifications & Expertise</h2>
+        <p class="section-subtitle">Comprehensive training and specialized skills</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {[
+          {
+            icon: "fas fa-graduation-cap",
+            title: "Medical Education",
+            description: "MBBS from prestigious medical institution with specialization in Ophthalmology"
+          },
+          {
+            icon: "fas fa-certificate",
+            title: "Specialized Training",
+            description: "Advanced training in retinal surgery and vitreoretinal procedures"
+          },
+          {
+            icon: "fas fa-microscope",
+            title: "Clinical Expertise",
+            description: "Expert in advanced diagnostic techniques and surgical interventions"
+          },
+          {
+            icon: "fas fa-baby",
+            title: "Pediatric Care",
+            description: "Specialized in pediatric retinal disorders including ROP screening"
+          },
+          {
+            icon: "fas fa-laser",
+            title: "Laser Procedures",
+            description: "Proficient in various laser treatments for retinal conditions"
+          },
+          {
+            icon: "fas fa-globe",
+            title: "International Experience",
+            description: "Trained and practiced in leading eye care institutions worldwide"
+          }
+        ].map((qualification) => (
+          <div class="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
+            <div class="text-4xl text-primary-600 mb-4">
+              <i class={qualification.icon}></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4">{qualification.title}</h3>
+            <p class="text-gray-600">{qualification.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Specializations Section -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center mb-12">
+        <h2 class="section-title">Areas of Specialization</h2>
+        <p class="section-subtitle">Comprehensive retinal care for all conditions</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {[
+          {
+            title: "Retinal Disorders",
+            conditions: [
+              "Diabetic Retinopathy",
+              "Age-related Macular Degeneration",
+              "Retinal Detachment",
+              "Retinal Vein Occlusion",
+              "Macular Holes",
+              "Epiretinal Membranes"
+            ]
+          },
+          {
+            title: "Pediatric Retinal Care",
+            conditions: [
+              "Retinopathy of Prematurity (ROP)",
+              "Pediatric Retinal Disorders",
+              "Congenital Eye Conditions",
+              "Vision Development Issues",
+              "Screening Programs",
+              "Early Intervention"
+            ]
+          },
+          {
+            title: "Surgical Procedures",
+            conditions: [
+              "Vitrectomy Surgery",
+              "Retinal Laser Treatment",
+              "Intravitreal Injections",
+              "Scleral Buckling",
+              "Macular Surgery",
+              "Complex Retinal Cases"
+            ]
+          },
+          {
+            title: "Diagnostic Services",
+            conditions: [
+              "OCT Imaging",
+              "Fluorescein Angiography",
+              "Visual Field Testing",
+              "Fundus Photography",
+              "Electroretinography",
+              "Genetic Testing"
+            ]
+          }
+        ].map((specialization) => (
+          <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <h3 class="text-2xl font-bold text-gray-900 mb-6">{specialization.title}</h3>
+            <ul class="space-y-3">
+              {specialization.conditions.map((condition) => (
+                <li class="flex items-center text-gray-600">
+                  <i class="fas fa-check text-primary-600 mr-3"></i>
+                  {condition}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Philosophy Section -->
+  <section class="section bg-gray-50">
+    <div class="container">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="section-title">Medical Philosophy</h2>
+        <div class="space-y-6 text-lg text-gray-600 leading-relaxed">
+          <p>
+            "My approach to patient care is rooted in the belief that every individual deserves personalized, 
+            compassionate treatment. I combine cutting-edge medical technology with a human touch, ensuring 
+            that each patient feels heard, understood, and cared for throughout their journey to better vision."
+          </p>
+          <p>
+            "At Sampada VR, we don't just treat eye conditions; we restore hope, confidence, and quality of life. 
+            My commitment is to provide the highest standard of retinal care while maintaining the warmth and 
+            personal attention that every patient deserves."
+          </p>
+          <div class="mt-8">
+            <p class="text-xl font-semibold text-primary-600">- Dr. Sameera V V</p>
+            <p class="text-gray-500">Founder & Chief Retinal Specialist</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section bg-primary-600 text-white">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="text-3xl font-bold mb-4">Schedule a Consultation</h2>
+        <p class="text-xl mb-8 max-w-2xl mx-auto">
+          Experience the difference that personalized, expert care can make for your eye health. 
+          Book a consultation with Dr. Sameera V V today.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/contact-us/" class="btn bg-white text-primary-600 hover:bg-gray-100">
+            Book Appointment
+          </a>
+          <a href="/treatments/" class="btn btn-secondary border-white text-white hover:bg-white hover:text-primary-600">
+            View Treatments
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  .hero-section {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #0284c7 100%);
+  }
+</style> 

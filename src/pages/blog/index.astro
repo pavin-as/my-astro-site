@@ -1,0 +1,150 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout title="Blog - Sampada VR Specialty Eye Care">
+  <Header />
+
+  <!-- Hero Section -->
+  <section class="hero-section bg-gradient-to-r from-primary-600 to-primary-800 text-white py-20">
+    <div class="container">
+      <div class="text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">Blog</h1>
+        <p class="text-xl md:text-2xl max-w-3xl mx-auto">
+          Latest insights, updates, and educational content about eye health and retinal care
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Content Section -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center mb-12">
+        <h2 class="section-title">Latest Articles</h2>
+        <p class="section-subtitle">Stay informed about eye health and retinal care</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {[
+          {
+            title: "Understanding Diabetic Retinopathy",
+            excerpt: "Learn about the causes, symptoms, and treatment options for diabetic retinopathy, a common complication of diabetes.",
+            image: "/wp-content/uploads/2024/02/1-2.png",
+            date: "February 15, 2024",
+            category: "Retinal Conditions"
+          },
+          {
+            title: "The Importance of Regular Eye Exams",
+            excerpt: "Discover why regular eye examinations are crucial for maintaining good vision and detecting eye conditions early.",
+            image: "/wp-content/uploads/2024/02/2-2.png",
+            date: "February 10, 2024",
+            category: "Eye Care"
+          },
+          {
+            title: "ROP Screening for Premature Babies",
+            excerpt: "Everything parents need to know about Retinopathy of Prematurity screening and its importance for premature infants.",
+            image: "/wp-content/uploads/2024/02/3-2.png",
+            date: "February 5, 2024",
+            category: "Pediatric Care"
+          },
+          {
+            title: "Advances in Retinal Surgery",
+            excerpt: "Explore the latest technological advancements in retinal surgery and how they improve patient outcomes.",
+            image: "/wp-content/uploads/2024/02/4-2.png",
+            date: "January 30, 2024",
+            category: "Technology"
+          },
+          {
+            title: "Preventing Age-Related Macular Degeneration",
+            excerpt: "Tips and strategies for reducing the risk of age-related macular degeneration and maintaining healthy vision.",
+            image: "/wp-content/uploads/2024/02/5-2.png",
+            date: "January 25, 2024",
+            category: "Prevention"
+          },
+          {
+            title: "Laser Treatment for Retinal Conditions",
+            excerpt: "Understanding how laser therapy works and its applications in treating various retinal disorders.",
+            image: "/wp-content/uploads/2024/02/6.png",
+            date: "January 20, 2024",
+            category: "Treatments"
+          }
+        ].map((post) => (
+          <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+            <div class="relative h-48">
+              <img 
+                src={post.image} 
+                alt={post.title}
+                class="w-full h-full object-cover"
+              />
+              <div class="absolute top-4 left-4">
+                <span class="bg-primary-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                  {post.category}
+                </span>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="text-sm text-gray-500 mb-2">{post.date}</div>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">{post.title}</h3>
+              <p class="text-gray-600 mb-4">{post.excerpt}</p>
+              <a href="#" class="text-primary-600 font-semibold hover:text-primary-700 transition-colors">
+                Read More →
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+      
+      <!-- Pagination -->
+      <div class="flex justify-center mt-12">
+        <nav class="flex items-center space-x-2">
+          <a href="#" class="px-4 py-2 text-gray-500 hover:text-primary-600 transition-colors">
+            Previous
+          </a>
+          <a href="#" class="px-4 py-2 bg-primary-600 text-white rounded-lg">1</a>
+          <a href="#" class="px-4 py-2 text-gray-600 hover:text-primary-600 transition-colors">2</a>
+          <a href="#" class="px-4 py-2 text-gray-600 hover:text-primary-600 transition-colors">3</a>
+          <a href="#" class="px-4 py-2 text-gray-500 hover:text-primary-600 transition-colors">
+            Next
+          </a>
+        </nav>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="section bg-gray-50">
+    <div class="container">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Stay Updated</h2>
+        <p class="text-gray-600 mb-8">
+          Subscribe to our newsletter for the latest updates on eye health, treatment options, and clinic news.
+        </p>
+        <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+          <input 
+            type="email" 
+            placeholder="Enter your email address"
+            class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+            required
+          >
+          <button 
+            type="submit"
+            class="px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
+          >
+            Subscribe
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  .hero-section {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #0284c7 100%);
+  }
+</style> 

@@ -1,0 +1,279 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout title="Treatments - Sampada VR Specialty Eye Care">
+  <Header />
+
+  <!-- Hero Section -->
+  <section class="hero-section bg-gradient-to-r from-primary-600 to-primary-800 text-white py-20">
+    <div class="container">
+      <div class="text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">Our Treatments</h1>
+        <p class="text-xl md:text-2xl max-w-3xl mx-auto">
+          Comprehensive eye care services for all your retinal health needs
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Treatments Overview -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center mb-12">
+        <h2 class="section-title">Specialized Eye Care Services</h2>
+        <p class="section-subtitle">
+          We offer a comprehensive range of treatments for various retinal conditions and eye health issues
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {[
+          {
+            icon: "fas fa-eye",
+            title: "Retinal Disorders",
+            description: "Treatment for various retinal conditions including retinal detachment, macular degeneration, and diabetic retinopathy.",
+            features: ["Retinal Detachment Surgery", "Macular Degeneration Treatment", "Diabetic Retinopathy Management"]
+          },
+          {
+            icon: "fas fa-baby",
+            title: "Pediatric Eye Care",
+            description: "Specialized care for children and premature infants, including ROP screening and treatment.",
+            features: ["ROP Screening", "Pediatric Eye Exams", "Vision Therapy"]
+          },
+          {
+            icon: "fas fa-glasses",
+            title: "Myopia Management",
+            description: "Comprehensive myopia control and management for children and adults.",
+            features: ["Orthokeratology", "Multifocal Contact Lenses", "Atropine Therapy"]
+          },
+          {
+            icon: "fas fa-laser",
+            title: "Laser Treatment",
+            description: "Advanced laser procedures for various retinal and eye conditions.",
+            features: ["Retinal Laser Photocoagulation", "YAG Laser Capsulotomy", "Selective Laser Trabeculoplasty"]
+          },
+          {
+            icon: "fas fa-microscope",
+            title: "Diagnostic Services",
+            description: "Comprehensive diagnostic testing using state-of-the-art equipment.",
+            features: ["OCT Imaging", "Visual Field Testing", "Fundus Photography"]
+          },
+          {
+            icon: "fas fa-video",
+            title: "Tele-consultation",
+            description: "Remote consultation services for follow-up visits and non-emergency cases.",
+            features: ["Video Consultations", "Remote Monitoring", "Digital Reports"]
+          }
+        ].map((treatment) => (
+          <div class="treatment-card bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
+            <div class="text-center mb-6">
+              <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class={`${treatment.icon} text-primary-600 text-2xl`}></i>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">{treatment.title}</h3>
+              <p class="text-gray-600">{treatment.description}</p>
+            </div>
+            <ul class="space-y-2">
+              {treatment.features.map((feature) => (
+                <li class="flex items-center text-sm text-gray-600">
+                  <i class="fas fa-check text-primary-600 mr-2"></i>
+                  {feature}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Technology Section -->
+  <section class="section bg-gray-50">
+    <div class="container">
+      <div class="text-center mb-12">
+        <h2 class="section-title">Advanced Technology</h2>
+        <p class="section-subtitle">State-of-the-art equipment for accurate diagnosis and treatment</p>
+      </div>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6">
+          <h3 class="text-2xl font-bold text-gray-900">Cutting-Edge Equipment</h3>
+          <p class="text-gray-600 leading-relaxed">
+            At Sampada VR, we invest in the latest medical technology to ensure the best possible outcomes for our patients. 
+            Our advanced equipment includes:
+          </p>
+          <ul class="space-y-3">
+            {[
+              "Optical Coherence Tomography (OCT) for detailed retinal imaging",
+              "Humphrey Field Analyzer for comprehensive visual field testing",
+              "Advanced laser systems for precise treatment delivery",
+              "Digital fundus photography for accurate documentation",
+              "Portable diagnostic equipment for bedside examinations"
+            ].map((item) => (
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-primary-600 mt-1 mr-3"></i>
+                <span class="text-gray-600">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="fade-in">
+          <img 
+            src="/wp-content/uploads/2024/02/1-2.png" 
+            alt="Medical Equipment" 
+            class="w-full h-auto rounded-lg shadow-lg"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Treatment Process -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center mb-12">
+        <h2 class="section-title">Our Treatment Process</h2>
+        <p class="section-subtitle">A step-by-step approach to your eye care</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {[
+          {
+            step: "01",
+            title: "Initial Consultation",
+            description: "Comprehensive eye examination and medical history review"
+          },
+          {
+            step: "02",
+            title: "Diagnostic Testing",
+            description: "Advanced imaging and testing for accurate diagnosis"
+          },
+          {
+            step: "03",
+            title: "Treatment Planning",
+            description: "Personalized treatment plan based on your condition"
+          },
+          {
+            step: "04",
+            title: "Treatment & Follow-up",
+            description: "Treatment delivery and ongoing monitoring"
+          }
+        ].map((process, index) => (
+          <div class="process-step text-center">
+            <div class="relative mb-6">
+              <div class="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto">
+                {process.step}
+              </div>
+              {index < 3 && (
+                <div class="hidden lg:block absolute top-8 left-full w-full h-0.5 bg-gray-300 transform translate-x-4"></div>
+              )}
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 mb-2">{process.title}</h3>
+            <p class="text-gray-600">{process.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Specialized Clinics -->
+  <section class="section bg-gray-50">
+    <div class="container">
+      <div class="text-center mb-12">
+        <h2 class="section-title">Specialized Clinics</h2>
+        <p class="section-subtitle">Dedicated clinics for specific conditions</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {[
+          {
+            title: "ROP Clinic",
+            description: "Specialized care for Retinopathy of Prematurity in premature infants",
+            features: [
+              "Regular screening for premature babies",
+              "Early detection and intervention",
+              "Family education and support",
+              "Long-term follow-up care"
+            ],
+            image: "/wp-content/uploads/2024/02/2-2.png"
+          },
+          {
+            title: "Myopia Clinic",
+            description: "Comprehensive myopia management for children and adults",
+            features: [
+              "Myopia progression monitoring",
+              "Orthokeratology treatment",
+              "Lifestyle modification guidance",
+              "Regular vision assessments"
+            ],
+            image: "/wp-content/uploads/2024/02/3-2.png"
+          }
+        ].map((clinic) => (
+          <div class="clinic-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+            <div class="relative h-48">
+              <img 
+                src={clinic.image} 
+                alt={clinic.title}
+                class="w-full h-full object-cover"
+              />
+              <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <h3 class="text-2xl font-bold text-white">{clinic.title}</h3>
+              </div>
+            </div>
+            <div class="p-6">
+              <p class="text-gray-600 mb-4">{clinic.description}</p>
+              <ul class="space-y-2">
+                {clinic.features.map((feature) => (
+                  <li class="flex items-center text-sm text-gray-600">
+                    <i class="fas fa-check text-primary-600 mr-2"></i>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section bg-primary-600 text-white">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="text-3xl font-bold mb-4">Ready to Start Your Treatment?</h2>
+        <p class="text-xl mb-8 max-w-2xl mx-auto">
+          Schedule a consultation with our specialists to discuss your eye health and treatment options.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/contact-us/" class="btn bg-white text-primary-600 hover:bg-gray-100">
+            Book Consultation
+          </a>
+          <a href="/about/" class="btn btn-secondary border-white text-white hover:bg-white hover:text-primary-600">
+            Learn More About Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  .hero-section {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #0284c7 100%);
+  }
+
+  .process-step {
+    position: relative;
+  }
+
+  .clinic-card:hover img {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+  }
+</style> 

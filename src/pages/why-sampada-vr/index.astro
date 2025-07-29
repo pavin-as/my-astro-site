@@ -1,0 +1,288 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout title="Why Sampada VR - Sampada VR Specialty Eye Care">
+  <Header />
+
+  <!-- Hero Section -->
+  <section class="hero-section bg-gradient-to-r from-primary-600 to-primary-800 text-white py-20">
+    <div class="container">
+      <div class="text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">Why Choose Sampada VR?</h1>
+        <p class="text-xl md:text-2xl max-w-3xl mx-auto">
+          Discover what makes us the preferred choice for retinal care and eye health
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center mb-12">
+        <h2 class="section-title">What Sets Us Apart</h2>
+        <p class="section-subtitle">Experience the difference of specialized, compassionate care</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {[
+          {
+            icon: "fas fa-user-md",
+            title: "Expert Specialists",
+            description: "Led by Dr. Sameera V V, our team consists of highly qualified retinal specialists with years of experience in complex eye conditions."
+          },
+          {
+            icon: "fas fa-microscope",
+            title: "Advanced Technology",
+            description: "State-of-the-art diagnostic and treatment equipment including OCT, laser systems, and advanced imaging technology."
+          },
+          {
+            icon: "fas fa-heart",
+            title: "Patient-Centered Care",
+            description: "Every patient receives personalized attention with treatment plans tailored to their specific needs and conditions."
+          },
+          {
+            icon: "fas fa-clock",
+            title: "Timely Care",
+            description: "Quick appointment scheduling and minimal wait times for urgent cases requiring immediate attention."
+          },
+          {
+            icon: "fas fa-home",
+            title: "Comfortable Environment",
+            description: "Modern, clean facilities designed to provide a comfortable and stress-free experience for patients."
+          },
+          {
+            icon: "fas fa-shield-alt",
+            title: "Safety First",
+            description: "Strict adherence to international safety standards and protocols for all procedures and treatments."
+          }
+        ].map((feature) => (
+          <div class="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
+            <div class="text-4xl text-primary-600 mb-4">
+              <i class={feature.icon}></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4">{feature.title}</h3>
+            <p class="text-gray-600">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Specialized Services Section -->
+  <section class="section bg-gray-50">
+    <div class="container">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6">
+          <h2 class="text-3xl font-bold text-gray-900">Specialized Retinal Care</h2>
+          <p class="text-gray-600 leading-relaxed">
+            Unlike general eye clinics, Sampada VR focuses exclusively on retinal disorders and conditions. 
+            This specialization allows us to provide deeper expertise and more effective treatments for complex 
+            retinal issues that require specialized knowledge and equipment.
+          </p>
+          <ul class="space-y-3">
+            {[
+              "Dedicated retinal specialists with advanced training",
+              "Specialized equipment for retinal diagnosis and treatment",
+              "Comprehensive treatment for all retinal conditions",
+              "Pediatric retinal care including ROP screening",
+              "Advanced surgical techniques and procedures",
+              "Long-term follow-up and monitoring"
+            ].map((benefit) => (
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-primary-600 mt-1 mr-3"></i>
+                <span class="text-gray-600">{benefit}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="fade-in">
+          <img 
+            src="/wp-content/uploads/2024/02/1-2.png" 
+            alt="Specialized Equipment" 
+            class="w-full h-auto rounded-lg shadow-lg"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Patient Experience Section -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center mb-12">
+        <h2 class="section-title">Exceptional Patient Experience</h2>
+        <p class="section-subtitle">From first contact to follow-up care</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {[
+          {
+            step: "01",
+            title: "Easy Scheduling",
+            description: "Convenient appointment booking with flexible timing options"
+          },
+          {
+            step: "02",
+            title: "Comprehensive Consultation",
+            description: "Thorough examination and detailed explanation of your condition"
+          },
+          {
+            step: "03",
+            title: "Personalized Treatment",
+            description: "Customized treatment plan designed specifically for your needs"
+          },
+          {
+            step: "04",
+            title: "Ongoing Support",
+            description: "Continuous care and support throughout your treatment journey"
+          }
+        ].map((experience, index) => (
+          <div class="text-center">
+            <div class="relative mb-6">
+              <div class="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto">
+                {experience.step}
+              </div>
+              {index < 3 && (
+                <div class="hidden lg:block absolute top-8 left-full w-full h-0.5 bg-gray-300 transform translate-x-4"></div>
+              )}
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 mb-2">{experience.title}</h3>
+            <p class="text-gray-600">{experience.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Technology Advantage Section -->
+  <section class="section bg-gray-50">
+    <div class="container">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="fade-in">
+          <img 
+            src="/wp-content/uploads/2024/02/2-2.png" 
+            alt="Advanced Technology" 
+            class="w-full h-auto rounded-lg shadow-lg"
+          />
+        </div>
+        <div class="space-y-6">
+          <h2 class="text-3xl font-bold text-gray-900">Cutting-Edge Technology</h2>
+          <p class="text-gray-600 leading-relaxed">
+            We invest in the latest medical technology to ensure accurate diagnosis and effective treatment. 
+            Our advanced equipment enables us to detect and treat retinal conditions with precision and confidence.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              {
+                icon: "fas fa-eye",
+                title: "OCT Imaging",
+                description: "High-resolution retinal imaging"
+              },
+              {
+                icon: "fas fa-chart-line",
+                title: "Visual Field Testing",
+                description: "Comprehensive vision assessment"
+              },
+              {
+                icon: "fas fa-camera",
+                title: "Fundus Photography",
+                description: "Detailed retinal documentation"
+              },
+              {
+                icon: "fas fa-laser",
+                title: "Advanced Laser Systems",
+                description: "Precise treatment delivery"
+              }
+            ].map((tech) => (
+              <div class="flex items-start space-x-3">
+                <div class="text-2xl text-primary-600 mt-1">
+                  <i class={tech.icon}></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-900">{tech.title}</h4>
+                  <p class="text-sm text-gray-600">{tech.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center mb-12">
+        <h2 class="section-title">What Our Patients Say</h2>
+        <p class="section-subtitle">Real experiences from our valued patients</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {[
+          {
+            name: "Mrs. Sarah Johnson",
+            condition: "Diabetic Retinopathy",
+            testimonial: "Dr. Sameera's expertise and compassionate care made all the difference in my treatment. The staff was professional and caring throughout my journey."
+          },
+          {
+            name: "Mr. Robert Chen",
+            condition: "Macular Degeneration",
+            testimonial: "The advanced technology and personalized treatment plan helped preserve my vision. I'm grateful for the excellent care I received."
+          },
+          {
+            name: "Baby Emma's Parents",
+            condition: "ROP Screening",
+            testimonial: "The pediatric care team was amazing with our premature baby. Their expertise in ROP screening gave us peace of mind."
+          }
+        ].map((testimonial) => (
+          <div class="bg-white p-8 rounded-lg shadow-lg">
+            <div class="flex items-center mb-4">
+              <div class="text-2xl text-primary-600 mr-3">
+                <i class="fas fa-quote-left"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900">{testimonial.name}</h4>
+                <p class="text-sm text-primary-600">{testimonial.condition}</p>
+              </div>
+            </div>
+            <p class="text-gray-600 italic">"{testimonial.testimonial}"</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section bg-primary-600 text-white">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="text-3xl font-bold mb-4">Experience the Difference</h2>
+        <p class="text-xl mb-8 max-w-2xl mx-auto">
+          Join hundreds of satisfied patients who have chosen Sampada VR for their retinal care needs. 
+          Schedule your consultation today.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/contact-us/" class="btn bg-white text-primary-600 hover:bg-gray-100">
+            Book Consultation
+          </a>
+          <a href="/about-dr-sameera-v-v/" class="btn btn-secondary border-white text-white hover:bg-white hover:text-primary-600">
+            Meet Our Doctor
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  .hero-section {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #0284c7 100%);
+  }
+</style> 

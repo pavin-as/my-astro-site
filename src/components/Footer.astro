@@ -1,0 +1,170 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-gray-900 text-white">
+  <div class="container">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 py-12">
+      <!-- Logo and Social Links -->
+      <div class="space-y-4">
+        <div class="logo">
+          <img 
+            src="/wp-content/uploads/2021/12/logo-new-sampadavr.png" 
+            alt="Sampada VR Logo" 
+            class="h-12 w-auto"
+          />
+        </div>
+        <div class="social-links flex space-x-4">
+          <a 
+            href="https://www.facebook.com/SAMPADA.VR/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="social-link"
+            aria-label="Facebook"
+          >
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a 
+            href="https://www.instagram.com/sampadavr/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="social-link"
+            aria-label="Instagram"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a 
+            href="https://www.youtube.com/channel/UC27WRITUFTkTseplhxPb6Cw/featured" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="social-link"
+            aria-label="YouTube"
+          >
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Opening Hours -->
+      <div class="space-y-4">
+        <h3 class="text-lg font-semibold">Opening Hours</h3>
+        <div class="space-y-2 text-gray-300">
+          <p>Monday: 9 AM to 5 PM</p>
+          <p>Tuesday: 3 PM to 5 PM</p>
+          <p>WED - SAT: 9AM to 5PM</p>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="space-y-4">
+        <h3 class="text-lg font-semibold">Quick Links</h3>
+        <nav class="space-y-2">
+          <a href="/" class="footer-link">Home</a>
+          <a href="/about/" class="footer-link">About</a>
+          <a href="/why-sampada-vr/" class="footer-link">Why Sampada VR</a>
+          <a href="/treatments/" class="footer-link">Treatments</a>
+          <a href="/blog/" class="footer-link">Blog</a>
+          <a href="/contact-us/" class="footer-link">Contact Us</a>
+        </nav>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="space-y-4">
+        <h3 class="text-lg font-semibold">Contact Info</h3>
+        <div class="space-y-3 text-gray-300">
+          <div class="flex items-start space-x-3">
+            <i class="fas fa-envelope mt-1 text-primary-400"></i>
+            <a href="mailto:Info@sampada.local" class="hover:text-white transition-colors">
+              Info@sampada.local
+            </a>
+          </div>
+          <div class="flex items-start space-x-3">
+            <i class="fas fa-phone mt-1 text-primary-400"></i>
+            <div class="space-y-1">
+              <a href="tel:+919188572412" class="hover:text-white transition-colors block">
+                +91 918 85 724 12
+              </a>
+              <a href="tel:+916238085482" class="hover:text-white transition-colors block">
+                +91 623 80 854 82
+              </a>
+            </div>
+          </div>
+          <div class="flex items-start space-x-3">
+            <i class="fas fa-map-marker-alt mt-1 text-primary-400"></i>
+            <address class="not-italic">
+              SampadaVR Speciality Eye Care LLP<br>
+              Railway Station Bypass Rd, Thazhepalam,<br>
+              Tirur, Kerala 676 101
+            </address>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="border-t border-gray-800 py-6">
+      <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+        <p class="text-gray-400 text-sm">
+          &copy; {currentYear} Created with 
+          <a 
+            href="https://bornov.com/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="text-gray-500 hover:text-white transition-colors"
+          >
+            Bornov Engineering
+          </a>
+        </p>
+        <div class="flex space-x-6 text-sm">
+          <a href="/privacy-policy" class="text-gray-400 hover:text-white transition-colors">
+            Privacy Policy
+          </a>
+          <a href="/terms-of-service" class="text-gray-400 hover:text-white transition-colors">
+            Terms of Service
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to Top Button -->
+<button 
+  id="back-to-top" 
+  class="fixed bottom-8 right-8 bg-primary-600 text-white p-3 rounded-full shadow-lg hover:bg-primary-700 transition-all duration-300 opacity-0 invisible"
+  aria-label="Back to top"
+>
+  <i class="fas fa-chevron-up"></i>
+</button>
+
+<style>
+  .social-link {
+    @apply w-10 h-10 bg-gray-800 text-white rounded-full flex items-center justify-center hover:bg-primary-600 transition-colors duration-200;
+  }
+
+  .footer-link {
+    @apply block text-gray-300 hover:text-white transition-colors duration-200;
+  }
+</style>
+
+<script>
+  // Back to top functionality
+  const backToTopBtn = document.getElementById('back-to-top');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      backToTopBtn?.classList.remove('opacity-0', 'invisible');
+      backToTopBtn?.classList.add('opacity-100', 'visible');
+    } else {
+      backToTopBtn?.classList.add('opacity-0', 'invisible');
+      backToTopBtn?.classList.remove('opacity-100', 'visible');
+    }
+  });
+
+  backToTopBtn?.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+</script> 

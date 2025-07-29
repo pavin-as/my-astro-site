@@ -1,633 +1,330 @@
 ---
-// Frontmatter - runs at build time
-const title = "Organicism Platform";
-const description = "Welcome to Organicism Platform - Your trusted partner for modern web solutions";
-
-// Sample blog posts (replace with your actual WordPress content)
-const recentPosts = [
-  {
-    title: "Getting Started with Modern Web Development",
-    excerpt: "Learn the fundamentals of building fast, secure, and scalable websites using modern technologies.",
-    date: "2024-12-15",
-    category: "Web Development",
-    image: "/images/blog-1.jpg"
-  },
-  {
-    title: "Why Choose Static Sites for Your Business",
-    excerpt: "Discover the benefits of static websites for security, performance, and cost-effectiveness.",
-    date: "2024-12-10",
-    category: "Business",
-    image: "/images/blog-2.jpg"
-  },
-  {
-    title: "SEO Best Practices for 2024",
-    excerpt: "Stay ahead of the competition with these essential SEO strategies for the new year.",
-    date: "2024-12-05",
-    category: "SEO",
-    image: "/images/blog-3.jpg"
-  }
-];
-
-// Sample services (replace with your actual services)
-const services = [
-  {
-    title: "Web Development",
-    description: "Custom websites built with modern technologies for optimal performance and user experience.",
-    icon: "💻",
-    features: ["Responsive Design", "SEO Optimized", "Fast Loading", "Secure"]
-  },
-  {
-    title: "E-commerce Solutions",
-    description: "Complete online store solutions to help you sell products and grow your business.",
-    icon: "🛒",
-    features: ["Payment Integration", "Inventory Management", "Order Processing", "Analytics"]
-  },
-  {
-    title: "Digital Marketing",
-    description: "Comprehensive digital marketing strategies to increase your online presence and reach.",
-    icon: "📈",
-    features: ["SEO", "Social Media", "Content Marketing", "PPC Campaigns"]
-  },
-  {
-    title: "Website Maintenance",
-    description: "Ongoing support and maintenance to keep your website running smoothly and securely.",
-    icon: "🔧",
-    features: ["Security Updates", "Performance Monitoring", "Backup Management", "Technical Support"]
-  }
-];
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/Hero.astro';
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title}</title>
-    <meta name="description" content={description} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://pavin-as.github.io/my-astro-site/" />
-    
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
-  </head>
-  <body>
-    <header>
-      <nav>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/services">Services</a>
-        <a href="/blog">Blog</a>
-        <a href="/portfolio">Portfolio</a>
-        <a href="/contact">Contact</a>
-      </nav>
-    </header>
-    
-    <main>
-      <section class="hero">
-        <h1>Welcome to Organicism Platform</h1>
-        <p class="hero-subtitle">Your trusted partner for modern, secure, and high-performance web solutions. We transform ideas into digital reality.</p>
-        <div class="cta-buttons">
-          <a href="/services" class="btn btn-primary">Our Services</a>
-          <a href="/portfolio" class="btn btn-secondary">View Portfolio</a>
+<Layout title="Sampada VR - Exceptional Healthcare Services">
+  <Header />
+  <Hero />
+
+  <!-- Mission Section -->
+  <section class="section bg-gray-50">
+    <div class="container">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="fade-in">
+          <img 
+            src="/wp-content/uploads/2024/02/drsameera.webp" 
+            alt="Dr. Sameera V V" 
+            class="w-full h-auto rounded-lg shadow-lg"
+          />
         </div>
-      </section>
+        <div class="space-y-6 slide-up">
+          <h2 class="text-3xl font-bold text-gray-900">Mission</h2>
+          <h3 class="text-2xl font-semibold text-gray-800">
+            Illuminating Lives through Compassionate Innovation at Sampada VR Specialty Eye Care
+          </h3>
+          <p class="text-gray-600 leading-relaxed">
+            At Sampada VR Specialty Eye Care, we are on a mission to redefine retinal health care by embodying the principles of Compassionate Innovation, Empowered Healing, and a Brighter Horizon. Our dedication is to merge cutting-edge technology with personalized, holistic care, making advanced treatments for retinal diseases accessible and effective. We commit to transforming the experience of eye care, where each patient's journey not only restores their vision but enlightens their spirit. Upholding the highest standards of integrity, compassion, and excellence, we aim to illuminate lives, empowering individuals to see the world with clarity and confidence. This singular focus drives our every action, ensuring that Sampada VR Specialty Eye Care stands as a beacon of hope and progress in the eye health community.
+          </p>
+          <a href="/about-dr-sameera-v-v/" class="btn btn-primary">
+            Read More
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Treatments Section -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center mb-12">
+        <h2 class="section-title">Our Treatments</h2>
+        <p class="section-subtitle">Take a peek inside our Wonderworld</p>
+      </div>
       
-      <section class="services-preview">
-        <h2>Our Services</h2>
-        <div class="services-grid">
-          {services.map(service => (
-            <div class="service-card">
-              <div class="service-icon">{service.icon}</div>
-              <h3>{service.title}</h3>
-              <p>{service.description}</p>
-              <ul class="service-features">
-                {service.features.map(feature => (
-                  <li>✓ {feature}</li>
-                ))}
-              </ul>
+      <div class="treatments-carousel">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {[
+            { image: "/wp-content/uploads/2024/02/1-2.png", title: "Treatment 1" },
+            { image: "/wp-content/uploads/2024/02/2-2.png", title: "Treatment 2" },
+            { image: "/wp-content/uploads/2024/02/3-2.png", title: "Treatment 3" },
+            { image: "/wp-content/uploads/2024/02/4-2.png", title: "Treatment 4" },
+            { image: "/wp-content/uploads/2024/02/5-2.png", title: "Treatment 5" },
+            { image: "/wp-content/uploads/2024/02/6.png", title: "Treatment 6" }
+          ].map((treatment) => (
+            <div class="treatment-card group">
+              <div class="relative overflow-hidden rounded-lg shadow-lg">
+                <img 
+                  src={treatment.image} 
+                  alt={treatment.title}
+                  class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+                />
+                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+                  <i class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                </div>
+              </div>
             </div>
           ))}
         </div>
-        <div class="services-cta">
-          <a href="/services" class="btn btn-outline">View All Services</a>
-        </div>
-      </section>
+      </div>
+    </div>
+  </section>
 
-      <section class="about-preview">
-        <div class="about-content">
-          <h2>About Organicism Platform</h2>
-          <p>We are a team of passionate developers and designers dedicated to creating exceptional digital experiences. With years of experience in web development, we understand what it takes to build websites that not only look great but also perform exceptionally well.</p>
-          <p>Our mission is to help businesses establish a strong online presence through modern, secure, and scalable web solutions that drive results.</p>
-          <a href="/about" class="btn btn-outline">Learn More About Us</a>
-        </div>
-      </section>
-
-      <section class="blog-preview">
-        <h2>Latest from Our Blog</h2>
-        <div class="blog-grid">
-          {recentPosts.map(post => (
-            <article class="blog-card">
-              <div class="blog-image">
-                <img src={post.image} alt={post.title} />
-              </div>
-              <div class="blog-content">
-                <div class="blog-meta">
-                  <span class="blog-category">{post.category}</span>
-                  <span class="blog-date">{new Date(post.date).toLocaleDateString()}</span>
+  <!-- Vision Section -->
+  <section class="section bg-gray-900 text-white">
+    <div class="container">
+      <div class="text-center mb-12">
+        <h2 class="section-title text-white">Vision</h2>
+        <h3 class="text-3xl font-bold mb-4">Envisioning a Healthier<br>Future</h3>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {[
+          {
+            icon: "fas fa-angle-double-up",
+            title: "Compassionate Innovation",
+            description: "Revolutionizing Retinal Health with Compassion and Innovation at Sampada VR Specialty Eye Care.",
+            fullText: "In the journey toward pioneering advancements in retinal health, Sampada VR Specialty Eye Care envisions becoming the quintessential haven for those navigating the challenges of retinal diseases. Our vision transcends traditional boundaries to offer a sanctuary where the fusion of compassionate care and groundbreaking innovation illuminates the path to healing and well-being. We dream of a future where every individual facing the specter of retinal conditions finds hope, solutions, and relief within the welcoming embrace of our clinic."
+          },
+          {
+            icon: "fas fa-shield-alt",
+            title: "Empowered Healing",
+            description: "Redefining Retinal Care with Expertise and Personalized Touch at Sampada VR Specialty Eye Care.",
+            fullText: "Our goal is to craft a realm where the complexities of retinal diseases are met with unparalleled expertise and a comprehensive spectrum of care that mirrors the facilities of a multispecialty eye hospital, yet with the intimacy and personalized touch of a clinic. We see ourselves as the architects of a future where the confluence of visionary technologies and holistic health strategies empowers individuals to navigate their health journey with confidence and dignity."
+          },
+          {
+            icon: "far fa-eye",
+            title: "Brighter Horizon",
+            description: "Illuminating Futures with Innovative, Empathetic Retinal Care at Sampada VR Specialty Eye Care.",
+            fullText: "At the heart of our vision lies the commitment to transforming the landscape of retinal care through innovation, empathy, and excellence. Sampada VR Specialty Eye Care aspires to be a beacon of progress, offering a beacon of light to those in search of clarity, understanding, and a new dawn for their eye health. It is our highest aspiration to ensure that no one with retinal diseases feels alone in their journey, making every breakthrough in care a step towards a brighter, more hopeful horizon."
+          }
+        ].map((vision) => (
+          <div class="vision-card group perspective">
+            <div class="relative w-full h-80 transition-transform duration-500 transform-style-preserve-3d group-hover:rotate-y-180">
+              <!-- Front -->
+              <div class="absolute inset-0 bg-white text-gray-900 rounded-lg shadow-lg p-8 flex flex-col items-center justify-center text-center backface-hidden">
+                <div class="text-4xl text-primary-600 mb-4">
+                  <i class={vision.icon}></i>
                 </div>
-                <h3>{post.title}</h3>
-                <p>{post.excerpt}</p>
-                <a href="/blog" class="read-more">Read More →</a>
+                <h3 class="text-xl font-bold mb-4">{vision.title}</h3>
+                <p class="text-gray-600">{vision.description}</p>
               </div>
-            </article>
+              
+              <!-- Back -->
+              <div class="absolute inset-0 bg-primary-600 text-white rounded-lg shadow-lg p-8 flex flex-col items-center justify-center text-center backface-hidden rotate-y-180">
+                <h3 class="text-lg font-bold mb-4">{vision.title}</h3>
+                <p class="text-sm leading-relaxed">{vision.fullText}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center mb-12">
+        <p class="text-lg text-gray-600 mb-2">Your questions answered</p>
+        <h2 class="section-title">Common questions</h2>
+      </div>
+      
+      <div class="max-w-4xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {[
+            {
+              question: "What are Vitreoretinal diseases?",
+              answer: "Vitreoretinal diseases are conditions that affect the vitreous and retina of the eye, which can lead to vision impairment or loss. Common examples include diabetic retinopathy, retinal detachment, and macular degeneration."
+            },
+            {
+              question: "How do I know if I need to see a Vitreoretinal specialist?",
+              answer: "If you experience symptoms such as sudden vision loss, floaters, flashes of light, or a shadow appearing in your field of vision, it's crucial to consult a vitreoretinal specialist immediately."
+            },
+            {
+              question: "What technologies are used in diagnosing and treating retinal diseases at Sampada VR?",
+              answer: "At Sampada VR, we are committed to utilizing the forefront of medical technology to diagnose and treat vitreoretinal diseases. Our arsenal of advanced equipment includes laser treatment, Humphrey Field Analyzer, and OCT imaging systems."
+            },
+            {
+              question: "Can Diabetic eye diseases be treated?",
+              answer: "Yes, with early detection and proper management, treatments such as laser surgery, vitrectomy, and injections can effectively control the progression of diabetic eye diseases and preserve vision."
+            },
+            {
+              question: "What is tele-consultation and how does it work?",
+              answer: "Tele-consultation allows patients to consult with our specialized national and international experts remotely, using digital communication tools. It's especially beneficial for follow-up visits or for patients with mobility issues."
+            },
+            {
+              question: "What makes Sampada VR different from other eye care centers?",
+              answer: "Sampada VR is a boutique consultation and surgery center, focusing exclusively on vitreoretinal diseases. We offer a holistic approach to patient care, combining the latest technologies with a compassionate, patient-centric service model."
+            }
+          ].map((faq) => (
+            <div class="faq-item border border-gray-200 rounded-lg">
+              <button class="faq-question w-full p-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors">
+                <span class="font-medium text-gray-900">{faq.question}</span>
+                <i class="fas fa-chevron-down text-gray-500 transition-transform"></i>
+              </button>
+              <div class="faq-answer hidden p-4 border-t border-gray-200">
+                <p class="text-gray-600">{faq.answer}</p>
+              </div>
+            </div>
           ))}
         </div>
-        <div class="blog-cta">
-          <a href="/blog" class="btn btn-outline">View All Posts</a>
-        </div>
-      </section>
+      </div>
+    </div>
+  </section>
 
-      <section class="stats-section">
-        <div class="stats-grid">
-          <div class="stat-item">
-            <div class="stat-number">50+</div>
-            <div class="stat-label">Projects Completed</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">100%</div>
-            <div class="stat-label">Client Satisfaction</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">5+</div>
-            <div class="stat-label">Years Experience</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number">24/7</div>
-            <div class="stat-label">Support Available</div>
-          </div>
-        </div>
-      </section>
-    </main>
-    
-    <footer>
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3>Organicism Platform</h3>
-          <p>Building the future of web development with modern, secure, and fast websites that drive business growth.</p>
-        </div>
-        <div class="footer-section">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/services">Services</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="/portfolio">Portfolio</a></li>
-            <li><a href="/contact">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h4>Services</h4>
-          <ul>
-            <li><a href="/services#web-development">Web Development</a></li>
-            <li><a href="/services#ecommerce">E-commerce</a></li>
-            <li><a href="/services#marketing">Digital Marketing</a></li>
-            <li><a href="/services#maintenance">Website Maintenance</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h4>Contact Info</h4>
-          <p>📧 contact@organicismplatform.com</p>
-          <p>📱 +1 (555) 123-4567</p>
-          <p>📍 New York, NY</p>
+  <!-- Testimonials Section -->
+  <section class="section bg-gray-50">
+    <div class="container">
+      <div class="text-center mb-12">
+        <h2 class="section-title">Feedback</h2>
+        <h3 class="text-3xl font-bold mb-4">What People Think About Us?</h3>
+        <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+      </div>
+      
+      <div class="testimonials-carousel max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {[
+            {
+              name: "Kimora Davila",
+              image: "/wp-content/uploads/2024/02/Mask-Group-3.png",
+              title: "Best Company",
+              content: "Eat imagine you chiefly few end ferrars compass. Be visitor females am ferrars inquiry. Latter law remark two lively thrown. Spot set they know rest its. Raptures law diverted believed jennings consider children the see. Had invited beloved carried the colonel. Occasional principles discretion it as he unpleasing."
+            },
+            {
+              name: "Ashleigh Davila",
+              image: "/wp-content/uploads/2024/02/Mask-Group-1.png",
+              title: "Right Choice",
+              content: "Do so written as raising parlors spirits mr elderly. Made late in of high left hold. Carried females of up highest calling. Limits marked led silent dining her she far. Sir but elegance marriage dwelling likewise position old pleasure men. Dissimilar themselves simplicity no of contrasted as. Delay great day hours."
+            }
+          ].map((testimonial) => (
+            <div class="testimonial-card bg-white p-8 rounded-lg shadow-lg">
+              <div class="flex items-center mb-6">
+                <img 
+                  src={testimonial.image} 
+                  alt={testimonial.name}
+                  class="w-16 h-16 rounded-full mr-4"
+                />
+                <div>
+                  <h4 class="font-semibold text-gray-900">{testimonial.name}</h4>
+                  <p class="text-gray-600">{testimonial.title}</p>
+                </div>
+              </div>
+              <div class="mb-4">
+                <i class="fas fa-quote-left text-primary-600 text-2xl"></i>
+              </div>
+              <p class="text-gray-700 leading-relaxed">{testimonial.content}</p>
+            </div>
+          ))}
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2024 Organicism Platform. Built with Astro.</p>
+    </div>
+  </section>
+
+  <!-- Latest Updates Section -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center mb-12">
+        <h2 class="section-title">Latest updates</h2>
       </div>
-    </footer>
-  </body>
-</html>
+      
+      <div class="updates-carousel max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {[
+            {
+              image: "/wp-content/uploads/2024/02/5-2.png",
+              title: "Innovative Healthcare Solutions",
+              description: "Whatever boy her exertion his extended. Ecstatic followed handsome drawings entirely one yet outweigh. Oacceptance insipidity remarkably."
+            },
+            {
+              image: "/wp-content/uploads/2024/02/3-2.png",
+              title: "Sustainable Wellness Initiatives",
+              description: "Whatever boy her exertion his extended. Ecstatic followed handsome drawings entirely one yet outweigh. Oacceptance insipidity remarkably."
+            }
+          ].map((update) => (
+            <div class="update-card relative overflow-hidden rounded-lg shadow-lg group">
+              <div class="relative h-64">
+                <img 
+                  src={update.image} 
+                  alt={update.title}
+                  class="w-full h-full object-cover"
+                />
+                <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div class="text-center text-white p-6">
+                    <h3 class="text-xl font-bold mb-2">{update.title}</h3>
+                    <p class="text-sm">{update.description}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
 
 <style>
-  /* Global styles */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  .perspective {
+    perspective: 1000px;
   }
-  
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #ffffff;
+
+  .transform-style-preserve-3d {
+    transform-style: preserve-3d;
   }
-  
-  /* Header & Navigation */
-  header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    padding: 1rem 0;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+
+  .backface-hidden {
+    backface-visibility: hidden;
   }
-  
-  nav {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
+
+  .rotate-y-180 {
+    transform: rotateY(180deg);
   }
-  
-  nav a {
-    text-decoration: none;
-    color: white;
-    font-weight: 500;
-    font-size: 1.1rem;
-    transition: all 0.3s ease;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
+
+  .faq-question.active i {
+    transform: rotate(180deg);
   }
-  
-  nav a:hover {
-    background: rgba(255,255,255,0.2);
-    transform: translateY(-2px);
-  }
-  
-  /* Main Content */
-  main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
-  /* Hero Section */
-  .hero {
-    text-align: center;
-    padding: 4rem 0;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    margin: 2rem 0;
-    border-radius: 20px;
-  }
-  
-  .hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-    color: #2c3e50;
-    font-weight: 700;
-  }
-  
-  .hero-subtitle {
-    font-size: 1.3rem;
-    margin-bottom: 2rem;
-    color: #5a6c7d;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  .cta-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  
-  /* Buttons */
-  .btn {
-    display: inline-block;
-    padding: 0.75rem 2rem;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
-  }
-  
-  .btn-primary {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-  }
-  
-  .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
-  }
-  
-  .btn-secondary {
-    background: white;
-    color: #667eea;
-    border-color: #667eea;
-  }
-  
-  .btn-secondary:hover {
-    background: #667eea;
-    color: white;
-    transform: translateY(-2px);
-  }
-  
-  .btn-outline {
-    background: transparent;
-    color: #667eea;
-    border-color: #667eea;
-  }
-  
-  .btn-outline:hover {
-    background: #667eea;
-    color: white;
-  }
-  
-  /* Services Section */
-  .services-preview {
-    padding: 4rem 0;
-  }
-  
-  .services-preview h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    color: #2c3e50;
-  }
-  
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-bottom: 3rem;
-  }
-  
-  .service-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-  }
-  
-  .service-card:hover {
-    transform: translateY(-5px);
-  }
-  
-  .service-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-  }
-  
-  .service-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: #2c3e50;
-  }
-  
-  .service-card p {
-    color: #5a6c7d;
-    margin-bottom: 1.5rem;
-  }
-  
-  .service-features {
-    list-style: none;
-    text-align: left;
-  }
-  
-  .service-features li {
-    padding: 0.25rem 0;
-    color: #5a6c7d;
-  }
-  
-  .services-cta {
-    text-align: center;
-  }
-  
-  /* About Preview Section */
-  .about-preview {
-    padding: 4rem 0;
-    background: #f8f9fa;
-    margin: 2rem 0;
-    border-radius: 20px;
-  }
-  
-  .about-content {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  .about-content h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-    color: #2c3e50;
-  }
-  
-  .about-content p {
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
-    color: #5a6c7d;
-  }
-  
-  /* Blog Section */
-  .blog-preview {
-    padding: 4rem 0;
-  }
-  
-  .blog-preview h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    color: #2c3e50;
-  }
-  
-  .blog-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-bottom: 3rem;
-  }
-  
-  .blog-card {
-    background: white;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-  }
-  
-  .blog-card:hover {
-    transform: translateY(-5px);
-  }
-  
-  .blog-image {
-    height: 200px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 3rem;
-  }
-  
-  .blog-content {
-    padding: 1.5rem;
-  }
-  
-  .blog-meta {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1rem;
-    font-size: 0.9rem;
-  }
-  
-  .blog-category {
-    background: #667eea;
-    color: white;
-    padding: 0.25rem 0.75rem;
-    border-radius: 20px;
-  }
-  
-  .blog-date {
-    color: #5a6c7d;
-  }
-  
-  .blog-card h3 {
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
-    color: #2c3e50;
-  }
-  
-  .blog-card p {
-    color: #5a6c7d;
-    margin-bottom: 1rem;
-  }
-  
-  .read-more {
-    color: #667eea;
-    text-decoration: none;
-    font-weight: 600;
-  }
-  
-  .read-more:hover {
-    text-decoration: underline;
-  }
-  
-  .blog-cta {
-    text-align: center;
-  }
-  
-  /* Stats Section */
-  .stats-section {
-    padding: 4rem 0;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    margin: 2rem 0;
-    border-radius: 20px;
-  }
-  
-  .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-  }
-  
-  .stat-item {
-    text-align: center;
-    color: white;
-  }
-  
-  .stat-number {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-  }
-  
-  .stat-label {
-    font-size: 1.1rem;
-    opacity: 0.9;
-  }
-  
-  /* Footer */
-  footer {
-    background: #2c3e50;
-    color: white;
-    margin-top: 4rem;
-  }
-  
-  .footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 3rem 20px 2rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-  }
-  
-  .footer-section h3,
-  .footer-section h4 {
-    margin-bottom: 1rem;
-    color: #ecf0f1;
-  }
-  
-  .footer-section ul {
-    list-style: none;
-  }
-  
-  .footer-section ul li {
-    margin-bottom: 0.5rem;
-  }
-  
-  .footer-section a {
-    color: #bdc3c7;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  
-  .footer-section a:hover {
-    color: #ecf0f1;
-  }
-  
-  .footer-bottom {
-    text-align: center;
-    padding: 1.5rem 20px;
-    border-top: 1px solid #34495e;
-    color: #bdc3c7;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .hero h1 {
-      font-size: 2.5rem;
-    }
-    
-    .hero-subtitle {
-      font-size: 1.1rem;
-    }
-    
-    .cta-buttons {
-      flex-direction: column;
-      align-items: center;
-    }
-    
-    .services-grid,
-    .blog-grid {
-      grid-template-columns: 1fr;
-    }
-    
-    .stats-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    
-    nav {
-      flex-direction: column;
-      gap: 1rem;
-    }
+
+  .faq-answer.active {
+    display: block;
   }
 </style>
+
+<script>
+  // FAQ functionality
+  document.addEventListener('DOMContentLoaded', () => {
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+      const question = item.querySelector('.faq-question');
+      const answer = item.querySelector('.faq-answer');
+      const icon = question?.querySelector('i');
+
+      question?.addEventListener('click', () => {
+        const isActive = question.classList.contains('active');
+
+        // Close all other FAQ items
+        faqItems.forEach(otherItem => {
+          const otherQuestion = otherItem.querySelector('.faq-question');
+          const otherAnswer = otherItem.querySelector('.faq-answer');
+          const otherIcon = otherQuestion?.querySelector('i');
+
+          if (otherQuestion) otherQuestion.classList.remove('active');
+          if (otherAnswer) otherAnswer.classList.remove('active');
+          if (otherIcon) otherIcon.style.transform = '';
+        });
+
+        // Toggle current item
+        if (!isActive) {
+          if (question) question.classList.add('active');
+          if (answer) answer.classList.add('active');
+          if (icon) icon.style.transform = 'rotate(180deg)';
+        }
+      });
+    });
+  });
+</script>
